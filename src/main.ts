@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
 
   const options = new DocumentBuilder()
-    .setTitle('API MEDIA')
+    .setTitle('API SMS')
     .setDescription('The cats API description')
     .setVersion('1.0')
     .addApiKey({
