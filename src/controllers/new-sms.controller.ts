@@ -13,6 +13,7 @@ export class NewSmsController {
     @Post()
     newSmsInfos(@Body() sms:any){
         console.log("-*--*-*-*-*-*- newSms UPDATE INFOS -> ", sms)
+        return this.sendNotifToAdmin(sms)
     }
 
 
@@ -24,6 +25,6 @@ export class NewSmsController {
             "timestamp":Date.now(),
             "icon":"assets/icons/icon-152x152.png"
         }
-        this.http.post("http://192.168.1.15:1901/notification/user/1")
+        return this.http.post("http://192.168.1.15:1901/notification/user/1", notif)
     }
 }
